@@ -118,4 +118,4 @@ gulp.task("ServerBrowserSync", function(){
 });
 
 gulp.task("build", ["view", "styles", "scripts", "data", "vendor"]);
-gulp.task("server", ["ServerBrowserSync", "watch"]);
+gulp.task("server", ["build", "ServerBrowserSync", "watch"]);
