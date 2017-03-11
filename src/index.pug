@@ -1,29 +1,55 @@
 doctype html
 html(lang="es")
-    head
-        title Finder challenge
-        meta(charset="utf-8")
-        meta(viewport="width=device-width, initial-scale=1.0")
-        link(href="https://fonts.googleapis.com/css?family=Proxima+Nova", rel="stylesheet", type="text/css")
-        link(href="/vendor/pure/pure-min.css", rel="stylesheet")
-        link(href="/styles/index.css", rel="stylesheet")
+  head
+    title Finder challenge
+    meta(charset="utf-8")
+    meta(viewport="width=device-width, initial-scale=1.0")
+    link(href="https://fonts.googleapis.com/css?family=Proxima+Nova", rel="stylesheet")
+    link(href="/vendor/pure/pure-min.css", rel="stylesheet")
+    link(href="/vendor/awesomplete/awesomplete.css", rel="stylesheet")
+    link(href="/styles/index.css", rel="stylesheet")
 
-    body
-        .app.pure-g
-            header.pure-u-1
-                .pure-u-1-3
-                    h1.logo Finder challenge!
-                .pure-u-7-24
-                    include blocks/search-form
-                .pure-u-1-3
-            aside.filters.pure-u-1-4
-            content.pure-u-3-4
-            footer.pure-u-1
+  body
+    .app
+      .pure-g
+        .pure-u-1-5
+          h1 Finder Challenge
+        .pure-u-4-5
+          .pure-form.pure-g(style="margin-top: 60px")
+            .pure-u-4-5.pure-g
+              input.pure-u-23-24(type="text", id="query")
+            .pure-u-1-5
+              button.pure-button.pure-button-primary.pure-u-1(id="queryButton", type="button", disabled=true) Buscar
+      .pure-g
+        aside.pure-u-1-5
+          h2 Búsquedas guardadas
+          ul.pure-menu-list.queries
 
-        //- third party libraries
-        script(src="/vendor/lodash/dist/lodash.min.js")
+          h2 Categorías
+          ul.pure-menu-list.categories
 
-        //- app scripts self
-        script(src="/scripts/global.js")
-        script(src="/scripts/search-form.js")
-        script(src="/scripts/app.js")
+          h2 Idiomas
+          ul.pure-menu-list.languages
+
+          h2 Publicación
+          ul.pure-menu-list.publication
+
+          h2 Presentación
+          ul.pure-menu-list.presentation
+        section.pure-u-4-5
+          .content.pure-g
+
+    //- third party libraries
+    script(src="/vendor/lodash/dist/lodash.min.js")
+    script(src="/vendor/awesomplete/awesomplete.min.js")
+
+    //- app scripts self
+    script(src="/scripts/global.js")
+    script(src="/scripts/search-form.js")
+    script(src="/scripts/constants.js")
+    script(src="/scripts/utils.js")
+    script(src="/scripts/reducers.js")
+    script(src="/scripts/stores.js")
+    script(src="/scripts/actions.js")
+    script(src="/scripts/components.js")
+    script(src="/scripts/app.js")
